@@ -51,6 +51,9 @@ ul.menu {
     max-width: 80%;
     margin: auto;
   }
+  ul.menu li a:hover {
+    background-color: rgb(255, 215, 15);
+  }
   @media only screen and (min-width: 768px) {
     /* For desktop: */
     .teksti {width: 40%; margin-left: 5%;}
