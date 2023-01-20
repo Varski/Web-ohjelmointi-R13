@@ -14,6 +14,22 @@ ul.menu {
     float: left;
   }
 
+  .logo{
+   text-align:right;
+   list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    display: block;
+    color: black;
+    padding: 14px 16px;
+    text-transform: uppercase;
+    font-family: "Helvetica", "Courier New";
+    font-weight: bold;
+    font-style: italic; 
+    
+  }
+  
+
   ul.menu li a {
     display: block;
     color: black;
@@ -59,4 +75,34 @@ ul.menu {
     .teksti {width: 40%; margin-left: 5%;}
     .kuva {width: 40%; margin-left: 5%;}
     .sisalto {display: flex;}
+  }
+
+  footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-style: italic;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    
+  }
+  .logo:hover{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes shake {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-1deg); }
+    20% { transform: rotate(1deg); }
+    30% { transform: rotate(0deg); }
+    40% { transform: rotate(1deg); }
+    50% { transform: rotate(-1deg); }
+    60% { transform: rotate(0deg); }
+    70% { transform: rotate(-1deg); }
+    80% { transform: rotate(1deg); }
+    90% { transform:  rotate(0deg); }
+    100% { transform: rotate(-1deg); }
   }
