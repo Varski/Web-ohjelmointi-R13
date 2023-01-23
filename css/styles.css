@@ -83,9 +83,10 @@ ul.menu {
   @media only screen and (min-width: 768px) {
     /* For desktop: */
     .teksti {width: 40%; margin-left: 5%;}
-    .tekstipricing {width: 50%; align-items: center; margin: auto; margin-top: 5%; max-width:500px;}
+    .tekstipricing {width: 60%; align-items: center; margin: auto; margin-top: 5%; max-width:700px;}
     .kuva {width: 40%; margin-left: 5%;}
     .sisalto {display: flex;}
+    td {font-size: 22px; min-width: 75px;}
   }
 
   footer{
