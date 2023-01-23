@@ -22,11 +22,16 @@ ul.menu {
     display: block;
     color: black;
     padding: 14px 16px;
-    text-transform: uppercase;
-    font-family: "Helvetica", "Courier New";
-    font-weight: bold;
-    font-style: italic; 
-    
+    font-family: MarckScript; src: url(MarckScript-Regular.ttf); 
+    font-style: italic;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+    margin-right: 300px;
+  }
+
+  @font-face {
+    font-family: MarckScript;
+    src: url("MarckScript-Regular.ttf");
   }
   
 
@@ -89,7 +94,7 @@ ul.menu {
     font-size: 10px;
     
   }
-  
+ 
   .center {
     font-family: Arial, Helvetica, sans-serif;
     
