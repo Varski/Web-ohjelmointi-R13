@@ -1,11 +1,11 @@
-body {
+body{
   background-color: bisque;
 }
 
 ul.menu {
   list-style-type: none;
   margin: 0;
-  padding: 1;
+  padding: 1px;
   overflow: hidden;
   background-color: rgb(255, 228, 87);
 }
@@ -27,6 +27,7 @@ ul.menu li {
   letter-spacing: 3px;
   word-spacing: 3px;
   margin-right: 5%;
+  font-weight: bold;
 }
 
 @font-face {
@@ -137,6 +138,19 @@ tr:nth-child(odd){
   -webkit-transform: scale(1.15);
   transform: scale(1.15);
 }
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin-left: 50px;
+}
+
+hr{
+  height: 2px;
+  width:100%;
+  text-align:left;
+  margin-left:0;
+  background-color:black
 
 input[type=text], select, textarea {
   width: 100%;
