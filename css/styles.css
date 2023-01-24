@@ -137,3 +137,18 @@ tr:nth-child(odd){
   -webkit-transform: scale(1.15);
   transform: scale(1.15);
 }
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin-left: 50px;
+}
+
+hr{
+  height: 2px;
+  width:100%;
+  text-align:left;
+  margin-left:0;
+  color: black;
+  background-color:black
+}
