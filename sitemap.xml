@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <url>
+       <loc>https://varski.github.io/Run-offs-Group-13/</loc>
+       <lastmod>2023-01-24T11:48:20+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://varski.github.io/Run-offs-Group-13/index.html</loc>
+       <lastmod>2023-01-24T11:48:20+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://varski.github.io/Run-offs-Group-13/pricing.html</loc>
+       <lastmod>2023-01-24T11:48:20+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://varski.github.io/Run-offs-Group-13/info.html</loc>
+       <lastmod>2023-01-24T11:48:20+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://varski.github.io/Run-offs-Group-13/contact.html</loc>
+       <lastmod>2023-01-24T11:48:20+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://varski.github.io/Run-offs-Group-13/easteregg.html</loc>
+       <lastmod>2023-01-24T11:48:20+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+</urlset>
