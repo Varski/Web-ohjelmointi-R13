@@ -74,6 +74,7 @@ clear: both;
 display: table;
 float: left;
 margin-bottom: 80px;
+margin-top: 5%;
 }
 .kuva img {
   display: block;
