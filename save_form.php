@@ -31,5 +31,6 @@ mysqli_close($yhteys);
 }
 header("Location:contact.html");
 exit;
+?>
 
 
