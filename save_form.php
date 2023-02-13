@@ -24,11 +24,11 @@ mysqli_stmt_bind_param($stmt, 'ssis', $fname, $lname, $ccard, $subject);
 
 mysqli_stmt_execute($stmt);
 
-$last_id = mysqli_insert_id($yhteys);
-
-mysqli_close($yhteys);
-
-}
 header("Location:contact.html");
 exit;
+
+
+}
+mysqli_close($yhteys);
+
 ?>
