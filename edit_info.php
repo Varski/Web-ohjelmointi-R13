@@ -20,19 +20,22 @@ $stmt=mysqli_prepare($yhteys, $sql);
 mysqli_stmt_bind_param($stmt, 'i', $muokattava);
 mysqli_stmt_execute($stmt);
 $tulos=mysqli_stmt_get_result($stmt);
-echo("Ei löydy");
-?>
+if ($rivi=mysqli_fetch_object($tulos)){
+    echo("Ei löydy");
+    ?>
 
-<form action='./update_info.php' method='post'>
-Id:<input type='text' name='id' value='<?php print $rivi->id;?>' readonly><br>
-First name:<input type='text' name='fname' value='<?php print $rivi->fname;?>'><br>
-Last name:<input type='text' name='lname' value='<?php print $rivi->lname;?>'><br>
-Credit card number:<input type='int' name='ccard' value='<?php print $rivi->ccard;?>'><br>
+    <form action='./update_info.php' method='post'>
+    Id:<input type='text' name='id' value='<?php print $rivi->id;?>' readonly><br>
+    First name:<input type='text' name='fname' value='<?php print $rivi->fname;?>'><br>
+    Last name:<input type='text' name='lname' value='<?php print $rivi->lname;?>'><br>
+    Credit card number:<input type='int' name='ccard' value='<?php print $rivi->ccard;?>'><br>
 
-<input type='submit' name='ok' value='OK'><br>
-</form>
+    <input type='submit' name='ok' value='OK'><br>
+    </form>
 
-<?php
+    <?php
+}
+
 mysqli_close($yhteys);
 header("sala.php");
 exit;
