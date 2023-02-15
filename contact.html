@@ -2,59 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact us</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
-    <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="info.html">Info</a></li>
-        <li><a href="contact.html">contact us</a></li>
-        <li><a href="yllapito/sisaan.html">login</a></li>
-        <h3 class="logo"> Fake Taxi: Totally legit service</h3>
-    </ul>
-    <div class="sisalto">
-                <div class="kuva">
-                <form action="save_form.php" method="post">
-              
-                  <label for="fname">First Name</label>
-                  <input type="text" id="fname" name="fname" required placeholder="Your name..">
-              
-                  <label for="lname">Last Name</label>
-                  <input type="text" id="lname" name="lname" required placeholder="Your last name..">
-              
-                  <label for="ccard">Credit Card Number</label>
-                  <input type="text" id="ccard" name="ccard" required placeholder="Your credit card number (max 16 numbers)">
-              
-                  <label for="subject">Subject</label>
-                  <textarea id="subject" name="subject" placeholder="Write something.. (max 500 words)" style="height:200px"></textarea>
+  <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="info.html">Info</a></li>
+    <li><a href="contact.html">contact us</a></li>
+    <li><a href="yllapito/sisaan.html">login</a></li>
+    <h3 class="logo"> Fake Taxi: Totally legit service</h3>
+  </ul>
+  <script>
+    function lahetaPalaute(lomake){
+      var palaute = new Object();
+      palaute.fname = lomake.fname.value;
+      palaute.lname = lomake.lname.value;
+      palaute.ccard = lomake.ccard.value;
+      palaute.subject = lomake.subject.value;
+      var jsonPalaute = JSON.stringify(palaute);
+      //jsonkentta.innerHTML = jsonPalaute;
 
-                  <input type="submit" name="ok" value="Send"><br>
-              
-                  <a href="easteregg.html"><input class="nappula" value="Secrets"></a>
+      xmlhttp = new XMLHttpRequest();
+     
+      xmlhttp.open("POST", "./save_form.php", true);
+      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xmlhttp.send("palaute=" + jsonPalaute);
+      document.getElementById("lomake").reset();
+    };
+    
 
-                </form>
-            </div>
-        <div class="kuva">
-                <img src="assets/images/Smiley.png">
-        </div>
+  </script>
+
+
+
+  <div class="sisalto">
+    <div class="kuva">
+      <form id="lomake">
+
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" value="" required placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" value="" required placeholder="Your last name..">
+
+        <label for="ccard">Credit Card Number</label>
+        <input type="text" name="ccard" value="" required placeholder="Your credit card number (max 16 numbers)">
+
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" value="" required placeholder="Insert Rant...">
+
+        <input type="button" name="ok" value="send" onclick="lahetaPalaute(this.form);"><br>
+
+        <a href="easteregg.html"><input class="nappula" value="Secrets"></a>
+
+      </form>
+       
+     </form>
+
     </div>
-<footer>
+    <div class="kuva">
+      <img src="assets/images/Smiley.png">
+    </div>
+  </div>
+  <footer>
     <marquee width="100%" direction="left">
-    This site is totally legit. You have no right to complain from anything or if we took your money its your problem
-    being so dum for not looking down here to the small text. We now own your house and all of your toiletpaper so good
-    luck going to the toilet. Also to
-    make things easier we have sent you an e-mail where we ask your personal details and credentials (write clearly
-    please!). Doge coins or
-    other cryptocurrencies can also be used to get you out of this mess (Please we need the money as all of us have
-    angered the local authorities wearing orange overalls in public). P.S We don't own any of these pictures on this website. 
+      This site is totally legit. You have no right to complain from anything or if we took your money its your problem
+      being so dum for not looking down here to the small text. We now own your house and all of your toiletpaper so
+      good
+      luck going to the toilet. Also to
+      make things easier we have sent you an e-mail where we ask your personal details and credentials (write clearly
+      please!). Doge coins or
+      other cryptocurrencies can also be used to get you out of this mess (Please we need the money as all of us have
+      angered the local authorities wearing orange overalls in public). P.S We don't own any of these pictures on this
+      website.
     </marquee>
-</footer>
+  </footer>
 </body>
 
 </html>
