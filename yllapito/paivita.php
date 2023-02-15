@@ -27,5 +27,5 @@ mysqli_stmt_bind_param($stmt, 'ssisi', $fname, $lname, $ccard, $subject, $id);
 mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);
 
-header("Location:.sala.php");
+header("Location:sala.php");
 ?>
