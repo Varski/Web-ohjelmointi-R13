@@ -33,7 +33,7 @@
       xmlhttp.open("POST", "./save_form.php", true);
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xmlhttp.send("palaute=" + jsonPalaute);
-      
+      document.getElementById("lomake").reset();
     };
     
 
@@ -62,6 +62,9 @@
         <a href="easteregg.html"><input class="nappula" value="Secrets"></a>
 
       </form>
+       
+     </form>
+
     </div>
     <div class="kuva">
       <img src="assets/images/Smiley.png">
