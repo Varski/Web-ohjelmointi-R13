@@ -3,7 +3,7 @@
 $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"] : "";
 
 if (empty($muokattava)){
-    header("Location:./edit_form.php");
+    header("Location:./muokkaa.php");
     exit;
 }
 
@@ -21,14 +21,15 @@ mysqli_stmt_bind_param($stmt, 'i', $muokattava);
 mysqli_stmt_execute($stmt);
 $tulos=mysqli_stmt_get_result($stmt);
 if ($rivi=mysqli_fetch_object($tulos)){
-    echo("Ei löydy");
+    echo("Tietokannasta noudetut tiedot");
     ?>
 
-    <form action='./update_info.php' method='post'>
+    <form action='./paivita.php' method='post'>
     Id:<input type='text' name='id' value='<?php print $rivi->id;?>' readonly><br>
     First name:<input type='text' name='fname' value='<?php print $rivi->fname;?>'><br>
     Last name:<input type='text' name='lname' value='<?php print $rivi->lname;?>'><br>
     Credit card number:<input type='int' name='ccard' value='<?php print $rivi->ccard;?>'><br>
+    Subject:<input type='text' name='subject' value='<?php print $rivi->subject;?>'><br>
 
     <input type='submit' name='ok' value='OK'><br>
     </form>
@@ -36,6 +37,4 @@ if ($rivi=mysqli_fetch_object($tulos)){
     <?php
 }
 mysqli_close($yhteys);
-header("sala.php");
-exit;
 ?>
