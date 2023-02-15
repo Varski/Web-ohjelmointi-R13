@@ -8,7 +8,7 @@ mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
     $yhteys=mysqli_connect("db", "root", "password", "taxidata");
 }
-catch(Exception $e){
+catch(Exeption $e){
     header("location:../html/yhteysvirhe.html");
     exit;
 }
