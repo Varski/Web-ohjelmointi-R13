@@ -1,8 +1,9 @@
 <?php
-$fname=isset($_POST["fname"]) ? $_POST["fname"] : "";
-$lname=isset($_POST["lname"]) ? $_POST["lname"] : ""; 
-$ccard=isset($_POST["ccard"]) ? $_POST["ccard"] : "";
-$subject=isset($_POST["subject"]) ? $_POST["subject"] : "";
+$json=isset($_POST["palaute"]) ? $_POST["palaute"] : "";
+if (!($palaute=tarkistaJson($json))){
+    print "Täytä kaikki kentät";
+
+}
 
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
@@ -13,22 +14,25 @@ catch(Exception $e){
     echo "Yhteysvirhe";
     exit;
 }
-
-if(!empty($fname) && !empty($lname) && !empty($ccard)){ 
-$sql="insert into form (fname, lname, ccard, subject) values (?, ?, ?, ?)"; 
-
-
+if (isset($palaute)){
+$sql="insert into form (fname, lname, ccard, subject) values (?, ?, ?, ?)";
 $stmt=mysqli_prepare($yhteys, $sql);
-
-mysqli_stmt_bind_param($stmt, 'ssis', $fname, $lname, $ccard, $subject);
-
-mysqli_stmt_execute($stmt);
-
-header("Location:contact.html");
-exit;
-
-
+mysqli_stmt_bind_param($stmt, 'ssis', $palaute->fname, $palaute->lname, $palaute->ccard, $palaute->subject);
 }
+mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);
+print "Paluupostina ".$json;
+?>
 
+<?php
+function tarkistaJson($json){
+    if (empty($json)){
+        return false;
+    }
+    $palaute=json_decode($json, false);
+    if (empty($palaute->fname) || empty($palaute->lname) || empty($palaute->ccard) || empty($palaute->subject) ){
+        return false;
+    }
+    return $palaute;
+}
 ?>
