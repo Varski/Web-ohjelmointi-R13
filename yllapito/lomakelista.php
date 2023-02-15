@@ -13,7 +13,8 @@ print "<table border='1'>";
 $tulos=mysqli_query($yhteys, "select * from form");
 while ($rivi=mysqli_fetch_object($tulos)){
     print "<tr><td>$rivi->fname <td>$rivi->lname <td>$rivi->id".
-    "<td><a href='./poista.php?poistettava=$rivi->id'>Poista</a>.
+    "<td><a href='./muokkaa.php?muokattava=$rivi->id'>Muokkaa</a>.
+    <td><a href='./poista.php?poistettava=$rivi->id'>Poista</a>.
      <td><a href='./palaute.php?palaute=$rivi->id'>Palaute</a>";
 
 }

@@ -6,7 +6,7 @@ $ccard=isset($_POST["ccard"]) ? $_POST["ccard"] : "";
 $subject=isset($_POST["subject"]) ? $_POST["subject"] : "";
 
 if (empty($fname) || empty($lname) || empty($id) || empty($ccard)){
-    header("Location:./update_info.php");
+    header("Location:./paivita.php");
     exit;
 }
 
@@ -20,10 +20,10 @@ catch(Exception $e){
     exit;
 }
 
-$sql="update form set fname=?, lname=?, ccard=?,  where id=?";
+$sql="update form set fname=?, lname=?, ccard=?, subject=? where id=?";
 
 $stmt=mysqli_prepare($yhteys, $sql);
-mysqli_stmt_bind_param($stmt, 'ssi', $etunimi, $sukunimi, $id);
+mysqli_stmt_bind_param($stmt, 'ssisi', $fname, $lname, $ccard, $subject, $id);
 mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);
 
