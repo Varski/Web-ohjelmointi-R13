@@ -15,6 +15,9 @@ catch(Exception $e){
     echo("Yhteysvirhe");
     exit;
 }
+//header html liittaminen sivuun
+include "header.html";
+echo "<ul><li><a href=\"ulos.php\">Kirjaudu ulos</a></li></ul>";
 $sql="select * from form where id=?";
 $stmt=mysqli_prepare($yhteys, $sql);
 mysqli_stmt_bind_param($stmt, 'i', $muokattava);
