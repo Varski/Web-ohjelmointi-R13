@@ -11,3 +11,6 @@ body {
     margin-top: 20%;
     padding: 12px;
 }
+td {
+    text-align: center;
+}

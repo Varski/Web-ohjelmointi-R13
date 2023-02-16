@@ -22,6 +22,6 @@ mysqli_stmt_bind_param($stmt, 'i', $poistettava);
 mysqli_stmt_execute($stmt);
 //suljetaan sql yhteys
 mysqli_close($yhteys);
-header("Location:henkilokanta.php");
+header("Location:lomakelista.php");
 exit;
 ?>
