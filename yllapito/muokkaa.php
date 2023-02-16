@@ -1,4 +1,12 @@
 <?php
+//tarkistetaan kayttaja
+session_start();
+$tunnus = $_SESSION["tunnus"];
+// käyttäjä ei ole kirjautunut sisään
+if ($tunnus == "") {
+    header("Location: sisaan.html");
+    die();
+}
 
 $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"] : "";
 
