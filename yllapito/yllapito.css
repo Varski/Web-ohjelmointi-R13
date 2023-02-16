@@ -1,0 +1,13 @@
+body {
+    background-color: bisque;
+}
+.kirjautumis {
+    background-color: antiquewhite;
+    border-style: groove;
+    max-width: 300px;
+    min-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    padding: 12px;
+}

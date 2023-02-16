@@ -8,6 +8,9 @@ catch(Exception $e){
 }
 ?>
 <?php
+//header html liittaminen sivuun
+include "header.html";
+echo "<ul><li><a href=\"ulos.php\">Kirjaudu ulos</a></li></ul>";
 //printtaa taulukon tietokannasta
 print "<table border='1'>";
 $tulos=mysqli_query($yhteys, "select * from form");

@@ -6,6 +6,8 @@ if ($tunnus == "") {
     header("Location: sisaan.html");
     die();
 }
+//header html liittaminen sivuun
+include "header.html";
 echo "<ul><li><a href=\"ulos.php\">Kirjaudu ulos</a></li></ul>";
 echo "<h1>Salainen sivu</h1>";
 echo "<p>Tunnus: $tunnus</p>";
