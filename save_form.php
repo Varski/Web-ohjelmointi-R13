@@ -1,8 +1,8 @@
 <?php
 $json=isset($_POST["palaute"]) ? $_POST["palaute"] : "";
 if (!($palaute=tarkistaJson($json))){
-    print "Täytä kaikki kentät";
-
+    print "Fill all fields please.";
+    exit;
 }
 
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
@@ -21,7 +21,7 @@ mysqli_stmt_bind_param($stmt, 'ssis', $palaute->fname, $palaute->lname, $palaute
 }
 mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);
-print "Paluupostina ".$json;
+
 ?>
 
 <?php

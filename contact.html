@@ -19,7 +19,7 @@
     <h3 class="logo"> Fake Taxi: Totally legit service</h3>
   </ul>
   <script>
-    function lahetaPalaute(lomake){
+    function lahetaPalaute(lomake) {
       var palaute = new Object();
       palaute.fname = lomake.fname.value;
       palaute.lname = lomake.lname.value;
@@ -29,13 +29,18 @@
       //jsonkentta.innerHTML = jsonPalaute;
 
       xmlhttp = new XMLHttpRequest();
-     
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("result").innerHTML = this.responseText;
+
+        }
+      };
       xmlhttp.open("POST", "./save_form.php", true);
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xmlhttp.send("palaute=" + jsonPalaute);
       document.getElementById("lomake").reset();
     };
-    
+
 
   </script>
 
@@ -58,10 +63,15 @@
         <input type="text" name="subject" value="" required placeholder="Insert Rant...">
 
         <input type="button" class="nappula" name="ok" value="send" onclick="lahetaPalaute(this.form);"><br>
-        
+
       </form>
-       
-     </form>
+
+      </form>
+      <br>
+      <br>
+      <div id='result'>
+      <!-- tähän tulee json palaute jos kentät tyhjiä -->
+      </div>
 
     </div>
     <div class="kuva">
