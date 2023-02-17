@@ -38,7 +38,10 @@
       xmlhttp.open("POST", "./save_form.php", true);
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xmlhttp.send("palaute=" + jsonPalaute);
-      document.getElementById("lomake").reset();
+      //document.getElementById("lomake").reset();
+      if (palaute.fname !== "" && palaute.lname !== "" && palaute.ccard !== "" && palaute.subject !== "") {
+        document.getElementById("lomake").reset();
+      }
     };
 
 
