@@ -40,6 +40,7 @@
       xmlhttp.send("palaute=" + jsonPalaute);
       //document.getElementById("lomake").reset();
       if (palaute.fname !== "" && palaute.lname !== "" && palaute.ccard !== "" && palaute.subject !== "") {
+        window.alert("The info has been sent")
         document.getElementById("lomake").reset();
       }
     };
