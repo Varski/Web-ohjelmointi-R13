@@ -17,7 +17,7 @@ catch(Exception $e){
 if (isset($palaute)){
 $sql="insert into form (fname, lname, ccard, subject) values (?, ?, ?, ?)";
 $stmt=mysqli_prepare($yhteys, $sql);
-mysqli_stmt_bind_param($stmt, 'ssis', $palaute->fname, $palaute->lname, $palaute->ccard, $palaute->subject);
+mysqli_stmt_bind_param($stmt, 'ssss', $palaute->fname, $palaute->lname, $palaute->ccard, $palaute->subject);
 }
 mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);

@@ -31,11 +31,15 @@
         document.getElementById("result").innerHTML ="Please fill all the fields";
         return;
       }
-
+      if (palaute.ccard.length !==16){
+        document.getElementById("result").innerHTML ="Credit card number is wrong (must be 16 characters long) !";
+        return;
+      }
+     
       xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          if (this.responseText ="ok"){
+          if (this.responseText !== "ok"){
           window.alert("The info has been saved")
           document.getElementById("lomake").reset();
           document.getElementById("result").innerHTML ="";
@@ -52,30 +56,59 @@
       
         
       }
-    ;
+      function checkccard() {
+      var inputVal = document.getElementById("ccard");
+      if (inputVal.value.length !== 16) {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
+    function checksubject() {
+      var inputVal = document.getElementById("subject");
+      if (inputVal.value == "") {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
 
+    function checklname() {
+      var inputVal = document.getElementById("lname");
+      if (inputVal.value == "") {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
+    function checkfname() {
+      var inputVal = document.getElementById("fname");
+      if (inputVal.value == "") {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
 
   </script>
-
-
 
   <div class="sisalto">
     <div class="kuva">
       <form id="lomake">
 
         <label for="fname">First Name</label>
-        <input type="text" name="fname" value="" required placeholder="Your name..">
+        <input type="text" name="fname" id="fname" value="" autofocus required placeholder="Your name..">
 
         <label for="lname">Last Name</label>
-        <input type="text" name="lname" value="" required placeholder="Your last name..">
+        <input type="text" name="lname" id="lname" value="" required placeholder="Your last name..">
 
         <label for="ccard">Credit Card Number</label>
-        <input type="text" name="ccard" value="" maxlength="16" required placeholder="Your credit card number (max 16 numbers)">
+        <input type="text" name="ccard" id="ccard" value="" maxlength="16" required placeholder="Your credit card number (max 16 numbers)">
 
         <label for="subject">Subject</label>
-        <input type="text" name="subject" value="" required placeholder="Insert Rant...">
+        <input type="text" name="subject" id="subject" value="" maxlength="500" required placeholder="Insert Rant (max 500 characters)">
 
-        <input type="button" class="nappula" name="ok" value="send" onclick="lahetaPalaute(this.form);"><br>
+        <input type="button" class="nappula" name="ok" value="send" onclick="lahetaPalaute(this.form);checklname();checksubject();checkfname();checkccard();"><br>
 
       </form>
 
@@ -107,3 +140,4 @@
 </body>
 
 </html>
+
