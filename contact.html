@@ -56,6 +56,39 @@
       
         
       }
+      function checkFilled() {
+      var inputVal = document.getElementById("ccard");
+      if (inputVal.value.length !== 16) {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
+    function checksubject() {
+      var inputVal = document.getElementById("subject");
+      if (inputVal.value == "") {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
+
+    function checklname() {
+      var inputVal = document.getElementById("lname");
+      if (inputVal.value == "") {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
+    function checkfname() {
+      var inputVal = document.getElementById("fname");
+      if (inputVal.value == "") {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
 
   </script>
 
