@@ -64,6 +64,14 @@
       else
       inputVal.style.borderColor = "lightgrey";
     }
+    function checkFilled1() {
+      var inputVal = document.getElementById("subject");
+      if (inputVal.value == "") {
+        inputVal.style.borderColor = "red";
+      }
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
     </script>
 
 
@@ -80,10 +88,10 @@
         <input type="text" name="lname" value="" required placeholder="Your last name..">
 
         <label for="ccard">Credit Card Number</label>
-        <input type="text" name="ccard" id="ccard" onchange="checkFilled();" value="" required placeholder="Your credit card number (max 16 numbers)">
+        <input type="text" name="ccard" id="ccard" onchange="checkFilled();" value="" maxlength="16" required placeholder="Your credit card number (max 16 numbers)">
 
         <label for="subject">Subject</label>
-        <input type="text" name="subject" value="" required placeholder="Insert Rant...">
+        <input type="text" name="subject" id="subject" onchange="checkFilled1();" value="" required placeholder="Insert Rant...">
 
         <input type="button" class="nappula" name="ok" value="send" onclick="lahetaPalaute(this.form);"><br>
 
