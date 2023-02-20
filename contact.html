@@ -27,23 +27,32 @@
       palaute.subject = lomake.subject.value;
       var jsonPalaute = JSON.stringify(palaute);
       //jsonkentta.innerHTML = jsonPalaute;
+      if (palaute.fname == "" || palaute.lname == "" || palaute.ccard == "" || palaute.subject == "") {
+        document.getElementById("result").innerHTML ="Please fill all the fields";
+        return;
+      }
 
       xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("result").innerHTML = this.responseText;
-
+          if (this.responseText ="ok"){
+          window.alert("The info has been saved")
+          document.getElementById("lomake").reset();
+          document.getElementById("result").innerHTML ="";
         }
+        else{
+          document.getElementById("result").innerHTML = this.responseText;
+        }
+      }
       };
       xmlhttp.open("POST", "./save_form.php", true);
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xmlhttp.send("palaute=" + jsonPalaute);
       //document.getElementById("lomake").reset();
-      if (palaute.fname !== "" && palaute.lname !== "" && palaute.ccard !== "" && palaute.subject !== "") {
-        window.alert("The info has been sent")
-        document.getElementById("lomake").reset();
+      
+        
       }
-    };
+    ;
 
 
   </script>
