@@ -21,7 +21,7 @@ mysqli_stmt_bind_param($stmt, 'ssss', $palaute->fname, $palaute->lname, $palaute
 }
 mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);
-print "Information has been saved";
+print "ok";
 ?>
 
 <?php
