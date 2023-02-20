@@ -31,11 +31,15 @@
         document.getElementById("result").innerHTML ="Please fill all the fields";
         return;
       }
-
+      if (palaute.ccard.length !==16){
+        document.getElementById("result").innerHTML ="Credit card number is wrong (must be 16 characters long) !";
+        return;
+      }
+     
       xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          if (this.responseText ="ok"){
+          if (this.responseText == "ok"){
           window.alert("The info has been saved")
           document.getElementById("lomake").reset();
           document.getElementById("result").innerHTML ="";
@@ -52,19 +56,15 @@
       
         
       }
-    ;
-
 
   </script>
-
-
 
   <div class="sisalto">
     <div class="kuva">
       <form id="lomake">
 
         <label for="fname">First Name</label>
-        <input type="text" name="fname" value="" required placeholder="Your name..">
+        <input type="text" name="fname" value="" autofocus required placeholder="Your name..">
 
         <label for="lname">Last Name</label>
         <input type="text" name="lname" value="" required placeholder="Your last name..">
@@ -73,7 +73,7 @@
         <input type="text" name="ccard" value="" maxlength="16" required placeholder="Your credit card number (max 16 numbers)">
 
         <label for="subject">Subject</label>
-        <input type="text" name="subject" value="" required placeholder="Insert Rant...">
+        <input type="text" name="subject" value="" maxlength="500" required placeholder="Insert Rant (Max 500 characters)">
 
         <input type="button" class="nappula" name="ok" value="send" onclick="lahetaPalaute(this.form);"><br>
 
@@ -107,3 +107,4 @@
 </body>
 
 </html>
+
