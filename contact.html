@@ -28,34 +28,44 @@
       var jsonPalaute = JSON.stringify(palaute);
       //jsonkentta.innerHTML = jsonPalaute;
       if (palaute.fname == "" || palaute.lname == "" || palaute.ccard == "" || palaute.subject == "") {
-        document.getElementById("result").innerHTML ="Please fill all the fields";
+        document.getElementById("result").innerHTML = "Please fill all the fields";
         return;
       }
 
       xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          if (this.responseText ="ok"){
-          window.alert("The info has been saved")
-          document.getElementById("lomake").reset();
-          document.getElementById("result").innerHTML ="";
+          if (this.responseText = "ok") {
+            window.alert("The info has been saved")
+            document.getElementById("lomake").reset();
+            document.getElementById("result").innerHTML = "";
+
+          }
+          else {
+            document.getElementById("result").innerHTML = this.responseText;
+          }
         }
-        else{
-          document.getElementById("result").innerHTML = this.responseText;
-        }
-      }
       };
       xmlhttp.open("POST", "./save_form.php", true);
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xmlhttp.send("palaute=" + jsonPalaute);
       //document.getElementById("lomake").reset();
-      
-        
+
+
+    }
+    
+
+    
+    function checkFilled() {
+      var inputVal = document.getElementById("ccard");
+      if (inputVal.value.length !== 16) {
+        inputVal.style.borderColor = "red";
       }
-    ;
+      else
+      inputVal.style.borderColor = "lightgrey";
+    }
+    </script>
 
-
-  </script>
 
 
 
@@ -70,7 +80,7 @@
         <input type="text" name="lname" value="" required placeholder="Your last name..">
 
         <label for="ccard">Credit Card Number</label>
-        <input type="text" name="ccard" value="" required placeholder="Your credit card number (max 16 numbers)">
+        <input type="text" name="ccard" id="ccard" onchange="checkFilled();" value="" required placeholder="Your credit card number (max 16 numbers)">
 
         <label for="subject">Subject</label>
         <input type="text" name="subject" value="" required placeholder="Insert Rant...">
@@ -83,7 +93,7 @@
       <br>
       <br>
       <div id='result'>
-      <!-- tähän tulee json palaute jos kentät tyhjiä -->
+        <!-- tähän tulee json palaute jos kentät tyhjiä -->
       </div>
 
     </div>
@@ -104,6 +114,9 @@
       website.
     </marquee>
   </footer>
+  <script>
+        //checkFilled();
+  </script>
 </body>
 
 </html>
