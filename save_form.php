@@ -21,7 +21,7 @@ mysqli_stmt_bind_param($stmt, 'ssis', $palaute->fname, $palaute->lname, $palaute
 }
 mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);
-
+print "ok";
 ?>
 
 <?php
