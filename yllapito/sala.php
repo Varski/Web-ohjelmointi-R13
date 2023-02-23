@@ -1,4 +1,5 @@
 <?php
+//tarkistetaan kayttaja
 session_start();
 $tunnus = $_SESSION["tunnus"];
 // käyttäjä ei ole kirjautunut sisään
