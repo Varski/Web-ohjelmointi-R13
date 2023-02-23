@@ -1,4 +1,12 @@
 <?php
+//tarkistetaan kayttaja
+session_start();
+$tunnus = $_SESSION["tunnus"];
+// käyttäjä ei ole kirjautunut sisään
+if ($tunnus == "") {
+    header("Location: sisaan.html");
+    die();
+}
 $id=isset($_POST["id"]) ? $_POST["id"] : "";
 $fname=isset($_POST["fname"]) ? $_POST["fname"] : "";
 $lname=isset($_POST["lname"]) ? $_POST["lname"] : "";
